@@ -33,4 +33,9 @@ public class QuizController {
     public ResponseEntity<String> submitQuiz(@PathVariable Integer id,@RequestBody List<QuizResponse> responses){
         return quizService.submitQuiz(id,responses);
     }
+
+    @GetMapping("/submit/get")
+    public ResponseEntity<String> get(){
+        return quizService.getData();
+    }
 }

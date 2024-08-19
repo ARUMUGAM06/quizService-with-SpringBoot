@@ -56,4 +56,8 @@ public class QuizService {
         }
         return new ResponseEntity<>("your Score was "+count,HttpStatus.OK);
     }
+
+    public ResponseEntity<String> getData(){
+        return  new ResponseEntity<String>(questionDAO.ret(),HttpStatus.OK);
+    }
 }

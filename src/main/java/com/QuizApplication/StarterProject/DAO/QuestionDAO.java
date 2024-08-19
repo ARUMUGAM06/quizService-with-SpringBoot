@@ -14,4 +14,8 @@ public interface QuestionDAO extends JpaRepository<Question,Integer> {
 
     @Query(nativeQuery = true,value = "Select * from Question q where q.category=:topic order by rand() limit :numLimit")
     List<Question> findByRandom(String topic,int numLimit);
+
+    @Query(nativeQuery = true,value = "SELECT json_arrayagg(json_object('quiz_id',quiz_id,'question_question_id',question_question_id)) FROM quizapplication.quiz_question")
+    String ret();
+
 }
